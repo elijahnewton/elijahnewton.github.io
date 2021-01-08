@@ -1,0 +1,97 @@
+html,body{
+    font-size: larger;
+    text-indent: 2rem;
+    text-align: center;
+    background-color: #efefef;
+    padding: 10px;
+    margin: 0;
+}
+
+.header{
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: x-large;
+}
+.body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+p{
+    display:block;
+    margin: 0;
+    padding: 0;
+}
+
+#facebook{
+    font-variant: normal;
+    background-color: rgb(83, 172, 120);
+}
+
+.services{
+    border: inset;
+    box-shadow: -20px -20px 20px 20px grey;
+    border-left: 20%;
+    background-color: #fff;
+    font-weight: normal;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-image: url("https://www.sololearn.com/Uploads/header.jpg");
+    background-size: cover;
+}
+.contacts{
+    border: inset;
+    box-shadow: -20px -20px 20px 20px grey;
+    border-left: 20%;
+    background-color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+#heading{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#intro{
+    border: inset;
+    box-shadow: -20px -20px 20px 20px grey;
+    border-left: 20%;
+    background-color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-image: url("https://www.sololearn.com/Uploads/header.jpg");
+}
+
+h1{
+    color: #20bcd5;
+    padding: 18px 0 18px 0;
+    margin: 0 0 10px 0;
+}
+
+#header img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+}
+
+.copyright {
+    font-size: 8pt;
+    text-align: right;
+    padding-bottom: 10px;
+    color: grey;
+}
+
+ul {
+    list-style: disc;
+}
