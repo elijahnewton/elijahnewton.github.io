@@ -1,23 +1,37 @@
 html,body{
-    font-size: larger;
+    font-size: 20px;
     text-indent: 2rem;
     text-align: center;
     background-color: #efefef;
     padding: 10px;
     margin: 0;
+    display: block;
+    word-wrap: break-word;
+}
+
+@media screen and (min-width: 601px) {
+  div.body {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.body {
+    font-size: 14px;
+  }
 }
 
 .header{
     text-align: center;
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: bold;
     font-variant: small-caps;
-    font-size: x-large;
+  /*  font-size: x-large;*/
 }
 .body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: italic;
-    font-size: x-large;
+   /* font-size: x-large;*/
     font-weight: bold;
 }
 
@@ -78,11 +92,10 @@ h1{
     margin: 0 0 10px 0;
 }
 
-#header img {
-    display: block;
-    width: 80px;
-    height: 80px;
-    margin: auto;
+#quotes {
+    font-style: italic;
+     color: #20bcd5;
+     background-image:url("https://www.sololearn.com/Uploads/header.jpg");
 }
 
 .copyright {
@@ -92,6 +105,28 @@ h1{
     color: grey;
 }
 
-ul {
-    list-style: disc;
+
+@media screen and (min-width: 601px) {
+  .header {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    font-size: 18px;
+  }
+}
+
+
+@media screen and (min-width: 601px) {
+  #quotes {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #quotes {
+    font-size: 14px;
+  }
 }
