@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weekend IT Tutorials Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+
+  <!-- Title Bar with Tabs -->
+  <header class="bg-green-600 text-white shadow-md">
+    <div class="flex justify-around py-3">
+      <button class="tab-btn active-tab" data-tab="home">HOME</button>
+      <button class="tab-btn" data-tab="c">C PROGRAMMING</button>
+      <button class="tab-btn" data-tab="web">WEB DEVELOPMENT</button>
+      <button class="tab-btn" data-tab="cyber">CYBER SECURITY</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="p-6 flex-grow">
+    <!-- Home -->
+    <section id="home" class="tab-content">
+      <h1 class="text-3xl font-bold text-green-700 mb-4">📚 Weekend IT Tutorials Hub</h1>
+      <h2 class="text-xl mb-2">👋 Welcome!</h2>
+      <p class="text-gray-700 mb-4">
+        Welcome to <span class="font-semibold">Weekend IT Tutorials Hub</span> 🎉  
+        This space is designed for busy IT weekend students who want short, easy-to-follow lessons and code templates.
+      </p>
+      <div class="bg-white shadow-md rounded-lg p-4 mb-4">
+        <p class="text-lg font-semibold text-gray-800">💰 Subscription: <span class="text-green-600">UGX 5,000 per month</span></p>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-4 mb-6">
+        <p class="text-lg font-semibold text-gray-800">📞 Contact: <span class="text-green-600">MUSIITWA ELIJAH</span> — <span class="text-gray-700">+256 779 949 750</span></p>
+      </div>
+
+      <!-- How to Join Section -->
+      <div class="bg-green-50 border-l-4 border-green-600 p-5 rounded-md shadow-sm">
+        <h2 class="text-xl font-bold text-green-700 mb-3">✅ How to Join</h2>
+        <ol class="list-decimal list-inside space-y-2 text-gray-700">
+          <li>Send subscription fee via Mobile Money: 
+            <span class="font-semibold text-green-700">+256 779 949 750 / +256 744 735 634</span> 
+            (<span class="font-semibold">MUSIITWA ELIJAH MUWANGUZI</span>).
+          </li>
+          <li>Screenshot receipt + Gmail adress And send on WhatsApp.</li>
+          <li>Receive access link to tutorials & templates.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- C Programming -->
+    <section id="c" class="tab-content hidden">
+      <h2 class="text-2xl font-bold text-green-700 mb-3">C Programming</h2>
+      <p class="text-gray-700 mb-6">Learn the fundamentals of C programming, from variables and loops to advanced data structures and memory management.</p>
+
+      <!-- Week 1 Resource Cards -->
+      <div class="bg-white rounded-xl shadow-md p-5 mb-6">
+        <h3 class="text-xl font-bold text-green-600 mb-4">📌 Week 1 – Salary Calculator in C</h3>
+        <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+          
+          <!-- Video Card -->
+          <a href="https://drive.google.com/file/d/1dGMKkLRQBbAr4GWAhINXijfqIU67lVwQ/view?usp=drive_link" target="_blank"
+             class="group block p-4 bg-gradient-to-r from-green-400 to-green-600 rounded-lg text-white shadow hover:scale-105 transform transition">
+            <div class="text-4xl mb-2">🎥</div>
+            <h4 class="font-semibold">Video</h4>
+            <p class="text-sm opacity-90">Watch tutorial</p>
+          </a>
+
+          <!-- Notes Card -->
+          <a href="https://drive.google.com/file/d/1op06QtefOe1K7ORbvi33Kl9rheIwF5Yp/view?usp=drive_link" target="_blank"
+             class="group block p-4 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg text-white shadow hover:scale-105 transform transition">
+            <div class="text-4xl mb-2">📄</div>
+            <h4 class="font-semibold">Notes</h4>
+            <p class="text-sm opacity-90">Download notes</p>
+          </a>
+
+          <!-- Code Template Card -->
+          <a href="https://drive.google.com/file/d/1hB4EXweeFB9XRnS9A2a6W9j0q_toc5bo/view?usp=drive_link" target="_blank"
+             class="group block p-4 bg-gradient-to-r from-purple-400 to-purple-600 rounded-lg text-white shadow hover:scale-105 transform transition">
+            <div class="text-4xl mb-2">💻</div>
+            <h4 class="font-semibold">Code</h4>
+            <p class="text-sm opacity-90">Get template</p>
+          </a>
+
+          <!-- Presentation Card -->
+          <a href="https://docs.google.com/presentation/d/1ikt3d34WUbVOy4SdA2uEf1dcZ1HsRcfP/edit?usp=drive_link&ouid=117975900077118064476&rtpof=true&sd=true" target="_blank"
+             class="group block p-4 bg-gradient-to-r from-pink-400 to-pink-600 rounded-lg text-white shadow hover:scale-105 transform transition">
+            <div class="text-4xl mb-2">📊</div>
+            <h4 class="font-semibold">Presentation</h4>
+            <p class="text-sm opacity-90">View slides</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Web Development -->
+    <section id="web" class="tab-content hidden">
+      <h2 class="text-2xl font-bold text-green-700 mb-3">Web Development</h2>
+      <p class="text-gray-700">Explore HTML, CSS, JavaScript, and frameworks to build responsive and interactive websites and apps.</p>
+    </section>
+
+    <!-- Cyber Security -->
+    <section id="cyber" class="tab-content hidden">
+      <h2 class="text-2xl font-bold text-green-700 mb-3">Cyber Security</h2>
+      <p class="text-gray-700">Understand threats, ethical hacking, and strategies to secure systems and protect data in the digital age.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-600 text-white text-center py-3 mt-auto">
+    <p>© 2025 Musiitwa Elijah</p>
+  </footer>
+
+  <!-- Script for Tabs -->
+  <script>
+    const buttons = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active-tab', 'border-b-4', 'border-white'));
+        contents.forEach(c => c.classList.add('hidden'));
+        btn.classList.add('active-tab', 'border-b-4', 'border-white');
+        document.getElementById(btn.dataset.tab).classList.remove('hidden');
+      });
+    });
+  </script>
+
+  <style>
+    .tab-btn {
+      @apply text-sm md:text-base font-semibold uppercase tracking-wide px-2;
+    }
+    .active-tab {
+      @apply text-white;
+    }
+  </style>
+</body>
+</html>
