@@ -8,13 +8,31 @@
 </head>
 <body class="bg-gray-100 font-sans flex flex-col min-h-screen">
 
-  <!-- Title Bar with Tabs -->
+  <!-- Header -->
   <header class="bg-green-600 text-white shadow-md">
-    <div class="flex justify-around py-3">
-      <button class="tab-btn active-tab" data-tab="home">HOME</button>
-      <button class="tab-btn" data-tab="c">C PROGRAMMING</button>
-      <button class="tab-btn" data-tab="web">WEB DEVELOPMENT</button>
-      <button class="tab-btn" data-tab="cyber">CYBER SECURITY</button>
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-4 py-3">
+      <h1 class="font-bold text-lg">IT Tutorials Hub</h1>
+      
+      <!-- Hamburger button (mobile) -->
+      <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none">
+        ☰
+      </button>
+
+      <!-- Nav tabs -->
+      <nav id="menu" class="hidden md:flex space-x-4">
+        <button class="tab-btn active-tab" data-tab="home">HOME</button>
+        <button class="tab-btn" data-tab="c">C PROGRAMMING</button>
+        <button class="tab-btn" data-tab="web">WEB DEVELOPMENT</button>
+        <button class="tab-btn" data-tab="cyber">CYBER SECURITY</button>
+      </nav>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-3 space-y-2 bg-green-700">
+      <button class="tab-btn w-full text-left" data-tab="home">HOME</button>
+      <button class="tab-btn w-full text-left" data-tab="c">C PROGRAMMING</button>
+      <button class="tab-btn w-full text-left" data-tab="web">WEB DEVELOPMENT</button>
+      <button class="tab-btn w-full text-left" data-tab="cyber">CYBER SECURITY</button>
     </div>
   </header>
 
@@ -43,7 +61,7 @@
             <span class="font-semibold text-green-700">+256 779 949 750 / +256 744 735 634</span> 
             (<span class="font-semibold">MUSIITWA ELIJAH MUWANGUZI</span>).
           </li>
-          <li>Screenshot receipt + Gmail adress And send on WhatsApp.</li>
+          <li>Screenshot receipt + Gmail address and send on WhatsApp.</li>
           <li>Receive access link to tutorials & templates.</li>
         </ol>
       </div>
@@ -113,18 +131,27 @@
     <p>© 2025 Musiitwa Elijah</p>
   </footer>
 
-  <!-- Script for Tabs -->
+  <!-- Script for Tabs + Menu -->
   <script>
     const buttons = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.tab-content');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
 
+    // Tab switching
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         buttons.forEach(b => b.classList.remove('active-tab', 'border-b-4', 'border-white'));
         contents.forEach(c => c.classList.add('hidden'));
         btn.classList.add('active-tab', 'border-b-4', 'border-white');
         document.getElementById(btn.dataset.tab).classList.remove('hidden');
+        mobileMenu.classList.add('hidden'); // close menu on click
       });
+    });
+
+    // Mobile menu toggle
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
     });
   </script>
 
@@ -138,4 +165,3 @@
   </style>
 </body>
 </html>
-
