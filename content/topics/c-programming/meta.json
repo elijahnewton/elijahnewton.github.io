@@ -1,0 +1,97 @@
+{
+  "id": "c-programming",
+  "title": "C Programming Mastery",
+  "description": "Learn C programming from basics to advanced concepts with hands-on projects",
+  "lessons": 12,
+  "duration": "24 hours",
+  "level": "Beginner to Advanced",
+  "prerequisites": "Basic computer literacy",
+  "instructor": "CodeMentor Pro Team",
+  "lastUpdated": "2025-01-01",
+  "lessonsMeta": [
+    {
+      "id": "lesson-1",
+      "title": "Introduction to Programming & C Environment Setup",
+      "duration": "2 hours",
+      "objectives": ["Understand programming concepts", "Set up C development environment", "Write and run first C program"],
+      "keywords": ["programming", "environment", "hello world", "compiler"]
+    },
+    {
+      "id": "lesson-2", 
+      "title": "C Basics: Syntax, Variables, Data Types",
+      "duration": "2 hours",
+      "objectives": ["Learn C syntax rules", "Understand variables and data types", "Work with basic input/output"],
+      "keywords": ["syntax", "variables", "data types", "printf", "scanf"]
+    },
+    {
+      "id": "lesson-3",
+      "title": "Control Structures: Conditionals & Loops",
+      "duration": "2 hours", 
+      "objectives": ["Master if-else statements", "Learn switch cases", "Implement loops (for, while, do-while)"],
+      "keywords": ["conditionals", "loops", "if-else", "for", "while"]
+    },
+    {
+      "id": "lesson-4",
+      "title": "Functions & Program Structure",
+      "duration": "2 hours",
+      "objectives": ["Create and use functions", "Understand scope and lifetime", "Work with function parameters"],
+      "keywords": ["functions", "parameters", "return values", "scope"]
+    },
+    {
+      "id": "lesson-5",
+      "title": "Arrays & Strings",
+      "duration": "2 hours",
+      "objectives": ["Work with arrays", "Manipulate strings", "Understand multi-dimensional arrays"],
+      "keywords": ["arrays", "strings", "character arrays", "multi-dimensional"]
+    },
+    {
+      "id": "lesson-6",
+      "title": "Pointers & Memory Management",
+      "duration": "2 hours",
+      "objectives": ["Understand pointers", "Work with pointer arithmetic", "Manage memory effectively"],
+      "keywords": ["pointers", "memory", "address", "dereference"]
+    },
+    {
+      "id": "lesson-7",
+      "title": "Structures & Unions",
+      "duration": "2 hours",
+      "objectives": ["Create and use structures", "Understand unions", "Work with complex data types"],
+      "keywords": ["structures", "unions", "typedef", "data structures"]
+    },
+    {
+      "id": "lesson-8",
+      "title": "File I/O Operations",
+      "duration": "2 hours",
+      "objectives": ["Read from files", "Write to files", "Handle file operations"],
+      "keywords": ["file io", "fopen", "fclose", "read", "write"]
+    },
+    {
+      "id": "lesson-9",
+      "title": "Dynamic Memory Allocation",
+      "duration": "2 hours",
+      "objectives": ["Use malloc and free", "Understand dynamic arrays", "Manage heap memory"],
+      "keywords": ["malloc", "free", "dynamic memory", "heap"]
+    },
+    {
+      "id": "lesson-10",
+      "title": "Data Structures in C (Linked Lists, Stacks)",
+      "duration": "2 hours",
+      "objectives": ["Implement linked lists", "Create stacks and queues", "Understand data structure concepts"],
+      "keywords": ["linked lists", "stacks", "queues", "data structures"]
+    },
+    {
+      "id": "lesson-11",
+      "title": "Advanced C Topics (Preprocessor, Bit Operations)",
+      "duration": "2 hours",
+      "objectives": ["Use preprocessor directives", "Work with bit operations", "Understand advanced concepts"],
+      "keywords": ["preprocessor", "bit operations", "macros", "advanced"]
+    },
+    {
+      "id": "lesson-12",
+      "title": "Capstone: Student Management System",
+      "duration": "2 hours",
+      "objectives": ["Build complete application", "Integrate all C concepts", "Create real-world project"],
+      "keywords": ["capstone", "project", "student management", "complete"]
+    }
+  ]
+}

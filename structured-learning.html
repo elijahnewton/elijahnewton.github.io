@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Structured Learning - CodeMentor Pro</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <!-- Highlight.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                        },
+                        blue: {
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        },
+                        green: {
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Mobile-first responsive design */
+        @media (max-width: 767px) {
+            .mobile-bottom-nav {
+                display: flex;
+            }
+            .desktop-sidebar {
+                display: none;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .mobile-bottom-nav {
+                display: none;
+            }
+            .desktop-sidebar {
+                display: block;
+            }
+        }
+
+        /* Lesson content styling for Markdown */
+        .lesson-content h1 { 
+            font-size: 1.875rem; 
+            font-weight: bold; 
+            color: #1f2937; 
+            margin-bottom: 1rem; 
+            margin-top: 1.5rem; 
+            line-height: 1.2;
+        }
+        
+        .lesson-content h2 { 
+            font-size: 1.5rem; 
+            font-weight: bold; 
+            color: #374151; 
+            margin-bottom: 0.75rem; 
+            margin-top: 1.25rem; 
+            line-height: 1.3;
+        }
+        
+        .lesson-content h3 { 
+            font-size: 1.25rem; 
+            font-weight: 600; 
+            color: #4b5563; 
+            margin-bottom: 0.5rem; 
+            margin-top: 1rem; 
+            line-height: 1.4;
+        }
+        
+        .lesson-content p { 
+            color: #374151; 
+            margin-bottom: 1rem; 
+            line-height: 1.75; 
+            font-size: 1rem;
+        }
+        
+        .lesson-content ul, .lesson-content ol { 
+            margin-bottom: 1rem; 
+            padding-left: 1.5rem; 
+        }
+        
+        .lesson-content li { 
+            margin-bottom: 0.5rem; 
+            color: #374151; 
+            line-height: 1.6;
+        }
+        
+        .lesson-content ul li { 
+            list-style-type: disc; 
+        }
+        
+        .lesson-content ol li { 
+            list-style-type: decimal; 
+        }
+        
+        .lesson-content code:not(pre code) { 
+            background-color: #f3f4f6; 
+            color: #1f2937; 
+            padding: 0.125rem 0.375rem; 
+            border-radius: 0.25rem; 
+            font-size: 0.875rem;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+        }
+        
+        .lesson-content pre { 
+            background-color: #1f2937; 
+            color: #f9fafb; 
+            padding: 1rem; 
+            border-radius: 0.5rem; 
+            margin-bottom: 1.5rem; 
+            overflow-x: auto;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        .lesson-content pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+            border-radius: 0;
+        }
+        
+        .lesson-content blockquote { 
+            border-left: 4px solid #0ea5e9; 
+            background-color: #f0f9ff; 
+            padding: 1rem 1.5rem; 
+            margin-bottom: 1.5rem; 
+            font-style: italic;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        
+        .lesson-content table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+        }
+        
+        .lesson-content th, .lesson-content td { 
+            border: 1px solid #d1d5db; 
+            padding: 0.75rem; 
+            text-align: left; 
+        }
+        
+        .lesson-content th { 
+            background-color: #f3f4f6; 
+            font-weight: 600; 
+            color: #374151;
+        }
+        
+        .lesson-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 767px) {
+            .lesson-content h1 { font-size: 1.5rem; }
+            .lesson-content h2 { font-size: 1.25rem; }
+            .lesson-content h3 { font-size: 1.125rem; }
+            .lesson-content p, .lesson-content li { font-size: 0.9375rem; }
+            .lesson-content pre { font-size: 0.8125rem; padding: 0.75rem; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-primary-700 to-primary-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-graduation-cap text-xl md:text-2xl"></i>
+                    <div>
+                        <h1 class="text-lg md:text-xl font-bold">CodeMentor Pro</h1>
+                        <p class="text-primary-100 text-xs md:text-sm">Master Programming • Build Projects</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2 md:space-x-4">
+                    <a href="progress.html" class="bg-primary-600 hover:bg-primary-500 px-3 py-2 rounded-lg transition-colors text-sm">
+                        <i class="fas fa-chart-line mr-1 md:mr-2"></i>
+                        <span class="hidden md:inline">Progress</span>
+                    </a>
+                    <a href="index.html" class="bg-white text-primary-700 hover:bg-gray-100 px-3 py-2 rounded-lg transition-colors font-semibold text-sm">
+                        <i class="fas fa-home mr-1 md:mr-2"></i>
+                        <span class="hidden md:inline">Home</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col md:flex-row bg-white">
+        <!-- Desktop Sidebar -->
+        <aside id="sidebar" class="desktop-sidebar w-full md:w-80 bg-gradient-to-b from-primary-50 to-white border-r border-primary-100 p-4 md:p-6 transform -translate-x-full md:translate-x-0 transition-transform duration-300 fixed md:relative h-full z-30 overflow-y-auto">
+            <div class="mb-6 md:mb-8">
+                <h3 class="font-bold text-primary-700 text-lg mb-4 flex items-center">
+                    <i class="fas fa-road mr-2"></i>Learning Paths
+                </h3>
+                
+                <!-- Learning Paths -->
+                <div class="space-y-4" id="learning-paths-container">
+                    <!-- Paths will be loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Current Lesson Navigation -->
+            <div id="current-lesson-nav" class="bg-white border border-primary-200 rounded-lg p-4 shadow-sm mb-4 hidden">
+                <h4 class="font-semibold text-primary-700 mb-3 text-sm md:text-base flex items-center">
+                    <i class="fas fa-compass mr-2"></i>Current Lesson
+                </h4>
+                <div id="lesson-navigation" class="space-y-2">
+                    <!-- Lesson navigation will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Progress -->
+            <div class="bg-white border border-primary-200 rounded-lg p-4 shadow-sm">
+                <h4 class="font-semibold text-primary-700 mb-2 text-sm md:text-base">Your Progress</h4>
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between text-xs md:text-sm mb-1">
+                            <span>C Programming</span>
+                            <span>40%</span>
+                        </div>
+                        <div class="w-full bg-primary-100 rounded-full h-2">
+                            <div class="bg-primary-500 h-2 rounded-full" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-xs md:text-sm mb-1">
+                            <span>Web Development</span>
+                            <span>25%</span>
+                        </div>
+                        <div class="w-full bg-green-100 rounded-full h-2">
+                            <div class="bg-green-500 h-2 rounded-full" style="width: 25%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Content Area -->
+        <div id="classic-content" class="flex-1 p-4 md:p-8 overflow-y-auto bg-gray-50 min-h-screen pb-20 md:pb-8">
+            <div class="max-w-4xl mx-auto">
+                <!-- Default state when no lesson is selected -->
+                <div id="default-content" class="text-center py-8 md:py-12">
+                    <i class="fas fa-map-signs text-4xl md:text-5xl text-primary-300 mb-4"></i>
+                    <h2 class="text-2xl md:text-3xl font-bold text-primary-800 mb-4">Structured Learning Path</h2>
+                    <p class="text-gray-600 text-base md:text-lg mb-6">Select a learning path from the sidebar to begin your journey. Each lesson builds upon previous knowledge with hands-on exercises.</p>
+                    <div class="bg-white rounded-xl shadow-lg p-6 max-w-2xl mx-auto">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Available Learning Paths</h3>
+                        <div class="grid md:grid-cols-1 gap-4">
+                            <!-- <div class="text-center p-4 border border-blue-200 rounded-lg bg-blue-50">
+                                <i class="fas fa-cogs text-3xl text-blue-500 mb-2"></i>
+                                <h4 class="font-semibold text-gray-800">C Programming</h4>
+                                <p class="text-gray-600 text-sm mt-1">From basics to advanced projects</p>
+                                <span class="inline-block mt-2 bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">12 Lessons</span>
+                            </div>
+                            <div class="text-center p-4 border border-green-200 rounded-lg bg-green-50">
+                                <i class="fas fa-code text-3xl text-green-500 mb-2"></i>
+                                <h4 class="font-semibold text-gray-800">Web Development</h4>
+                                <p class="text-gray-600 text-sm mt-1">Build modern websites and applications</p>
+                                <span class="inline-block mt-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">12 Lessons</span>
+                            </div> -->
+                            <div class="space-y-4" id="learning-paths-container2">
+                            <!-- Paths will be loaded dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lesson content will be loaded here -->
+                <div id="lesson-content"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav id="mobile-bottom-nav" class="mobile-bottom-nav fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-3 px-4 z-50 shadow-lg" style="touch-action: manipulation;">
+        <div class="flex justify-between items-center max-w-4xl mx-auto">
+            <button id="mobile-prev" type="button" class="safe-btn flex items-center space-x-2 text-primary-600 disabled:text-gray-400 disabled:cursor-not-allowed px-3 py-2 rounded-md" aria-label="Previous lesson" aria-disabled="true" disabled data-debounce="350">
+                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                <span class="hidden xs:inline">Previous</span>
+            </button>
+            
+            <div class="flex items-center space-x-2">
+                <button id="mobile-menu" type="button" class="safe-btn bg-primary-500 text-white p-2 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-300" aria-label="Open menu" data-debounce="250">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <span id="mobile-progress" class="text-sm text-gray-600 hidden sm:inline" aria-live="polite">Lesson 1/12</span>
+            </div>
+            
+            <button id="mobile-next" type="button" class="safe-btn flex items-center space-x-2 text-primary-600 disabled:text-gray-400 disabled:cursor-not-allowed px-3 py-2 rounded-md" aria-label="Next lesson" data-debounce="350">
+                <span class="hidden xs:inline">Next</span>
+                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </button>
+        </div>
+    </nav>
+
+    <script>
+    /* Debounce / accidental-click protection for mobile nav buttons.
+       Uses capturing listener to run before inline/onclick handlers and temporarily disables the button. */
+    (function(){
+        const nav = document.getElementById('mobile-bottom-nav');
+        if (!nav) return;
+
+        nav.addEventListener('click', function(e) {
+            const btn = e.target.closest('.safe-btn');
+            if (!btn) return;
+
+            const now = Date.now();
+            const last = btn.__lastClickTime || 0;
+            const debounce = Number(btn.dataset.debounce) || 300;
+
+            if (now - last < debounce) {
+                // Too fast — ignore accidental rapid clicks
+                e.stopImmediatePropagation();
+                e.preventDefault();
+                return;
+            }
+
+            // record click and briefly disable to avoid accidental repeats
+            btn.__lastClickTime = now;
+            btn.disabled = true;
+            btn.setAttribute('aria-disabled', 'true');
+
+            // keep visual disabled state slightly longer than debounce
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.removeAttribute('aria-disabled');
+            }, debounce + 120);
+
+            // allow event to continue to other handlers
+        }, true);
+    })();
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-primary-800 to-primary-900 text-white py-6 md:py-8 mt-8 md:mt-0">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-6 md:gap-8">
+                <div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 md:mb-4">CodeMentor Pro</h3>
+                    <p class="text-primary-200 text-sm">Master programming through structured learning and hands-on projects.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-3 md:mb-4 text-sm md:text-base">Learning Paths</h4>
+                    <ul class="space-y-2 text-primary-200 text-sm">
+                        <li><a href="structured-learning.html" class="hover:text-white transition-colors">C Programming</a></li>
+                        <li><a href="structured-learning.html" class="hover:text-white transition-colors">Web Development</a></li>
+                        <li><a href="structured-learning.html" class="hover:text-white transition-colors">Data Science</a></li>
+                        <li><a href="structured-learning.html" class="hover:text-white transition-colors">Cyber Security</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-3 md:mb-4 text-sm md:text-base">Resources</h4>
+                    <ul class="space-y-2 text-primary-200 text-sm">
+                        <li><a href="interactive-resources.html" class="hover:text-white transition-colors">Documentation</a></li>
+                        <li><a href="interactive-resources.html" class="hover:text-white transition-colors">Code Templates</a></li>
+                        <li><a href="interactive-resources.html" class="hover:text-white transition-colors">Video Library</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Community</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-3 md:mb-4 text-sm md:text-base">Connect</h4>
+                    <div class="flex space-x-3 md:space-x-4">
+                        <a href="#" class="bg-primary-700 hover:bg-primary-600 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-github text-sm md:text-base"></i>
+                        </a>
+                        <a href="#" class="bg-primary-700 hover:bg-primary-600 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-discord text-sm md:text-base"></i>
+                        </a>
+                        <a href="#" class="bg-primary-700 hover:bg-primary-600 w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fab fa-youtube text-sm md:text-base"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-primary-700 mt-6 md:mt-8 pt-4 md:pt-6 text-center text-primary-300 text-sm">
+                <p>© 2025 MUSIITWA ELIJAH DIT/25W/U/A1128. Empowering developers worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Enhanced Content Loader with Mobile Support
+        class ContentLoader {
+            constructor() {
+                this.currentPath = null;
+                this.currentLesson = 1;
+                this.currentPathMeta = null;
+                
+                // Configure marked.js
+                if (typeof marked !== 'undefined') {
+                    marked.setOptions({
+                        highlight: function(code, lang) {
+                            if (typeof hljs !== 'undefined' && lang) {
+                                return hljs.highlight(code, { language: lang }).value;
+                            }
+                            return code;
+                        },
+                        breaks: true,
+                        gfm: true
+                    });
+                }
+            }
+
+            // Load learning paths for sidebar
+            async loadLearningPaths() {
+                try {
+                    const response = await fetch('content/topics/learning-paths.json');
+                    const data = await response.json();
+                    this.renderLearningPaths(data.paths);
+                    return data.paths;
+                } catch (error) {
+                    console.error('Error loading learning paths:', error);
+                    this.renderError('Failed to load learning paths. Please check your internet connection.');
+                    return [];
+                }
+            }
+
+            // Render learning paths in sidebar
+            renderLearningPaths(paths) {
+                const container = document.getElementById('learning-paths-container');
+                
+                if (!container) return;
+
+                container.innerHTML = paths.map(path => `
+                    <div class="bg-white border border-${path.color}-200 rounded-lg p-4 shadow-sm cursor-pointer hover:border-${path.color}-400 transition-colors mb-4" 
+                         onclick="contentLoader.selectPath('${path.id}')">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-${path.color}-100 flex items-center justify-center flex-shrink-0">
+                                <i class="${path.icon} text-${path.color}-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-800 mb-1">${path.title}</h4>
+                                <p class="text-gray-600 text-sm mb-2">${path.description}</p>
+                                <div class="flex justify-between items-center text-xs text-gray-500">
+                                    <span>${path.lessons} lessons</span>
+                                    <span class="flex items-center">
+                                        <i class="fas fa-clock mr-1"></i>${path.duration}
+                                    </span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="inline-block bg-${path.color}-100 text-${path.color}-800 text-xs px-2 py-1 rounded-full">
+                                        ${path.level}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                const container2 = document.getElementById('learning-paths-container2');
+                if (!container2) return;
+                container2.innerHTML = paths.map(path => `
+                    <div class="bg-white border border-${path.color}-200 rounded-lg p-4 shadow-sm cursor-pointer hover:border-${path.color}-400 transition-colors mb-4" 
+                         onclick="contentLoader.selectPath('${path.id}')">
+                        <div class="text-center p-4 border ">
+                            <div class="rounded-lg bg-${path.color}-100 flex items-center justify-center flex-shrink-0">
+                                <i class="${path.icon} text-${path.color}-600"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-gray-800 mb-1">${path.title}</h4>
+                                <p class="text-gray-600 text-sm mb-2">${path.description}</p>
+                                <div class="flex justify-between items-center text-xs text-gray-500">
+                                    <span>${path.lessons} lessons</span>
+                                    <span class="flex items-center">
+                                        <i class="fas fa-clock mr-1"></i>${path.duration}
+                                    </span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="inline-block bg-${path.color}-100 text-${path.color}-800 text-xs px-2 py-1 rounded-full">
+                                        ${path.level}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+
+            }
+
+            // Select a learning path
+            async selectPath(pathId) {
+                this.currentPath = pathId;
+                this.currentLesson = 1;
+                
+                // Hide default content
+                document.getElementById('default-content').style.display = 'none';
+                
+                // Load path metadata
+                const meta = await this.loadPathMeta(pathId);
+                if (meta) {
+                    this.currentPathMeta = meta;
+                    await this.loadLesson(pathId, 1);
+                    this.updateLessonNavigation(meta);
+                    
+                    // Close mobile sidebar
+                    if (window.innerWidth < 768) {
+                        document.getElementById('sidebar').classList.add('-translate-x-full');
+                    }
+                }
+            }
+
+            // Load path metadata
+            async loadPathMeta(pathId) {
+                try {
+                    const response = await fetch(`content/topics/${pathId}/meta.json`);
+                    return await response.json();
+                } catch (error) {
+                    console.error('Error loading path metadata:', error);
+                    this.renderError('Failed to load course content.');
+                    return null;
+                }
+            }
+
+            // Load specific lesson
+            async loadLesson(pathId, lessonNumber) {
+                try {
+                    // Load lesson content
+                    const response = await fetch(`content/topics/${pathId}/lesson-${lessonNumber}.md`);
+                    if (!response.ok) {
+                        throw new Error('Lesson not found');
+                    }
+                    
+                    const markdown = await response.text();
+                    const htmlContent = marked.parse(markdown);
+                    
+                    // Load lesson metadata for navigation
+                    const pathMeta = await this.loadPathMeta(pathId);
+                    const lessonMeta = pathMeta.lessonsMeta[lessonNumber - 1];
+                    
+                    this.renderLesson(htmlContent, lessonMeta, pathMeta, lessonNumber);
+                    this.currentLesson = lessonNumber;
+                    this.updateMobileNavigation(lessonNumber, pathMeta.lessons);
+                    
+                } catch (error) {
+                    console.error('Error loading lesson:', error);
+                    this.renderError(`Lesson ${lessonNumber} not available yet. Check back soon!`);
+                }
+            }
+
+            // Render lesson content
+            renderLesson(content, lessonMeta, pathMeta, lessonNumber) {
+                const container = document.getElementById('lesson-content');
+                if (!container) return;
+
+                container.innerHTML = `
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-6">
+                        <!-- Lesson Header -->
+                        <div class="bg-gradient-to-r from-primary-600 to-primary-700 text-white p-6">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                                <div>
+                                    <span class="text-primary-200 text-sm uppercase tracking-wide">Lesson ${lessonNumber}</span>
+                                    <h1 class="text-2xl md:text-3xl font-bold mt-1">${lessonMeta.title}</h1>
+                                    <div class="flex items-center mt-2 space-x-4 text-primary-100">
+                                        <span class="flex items-center">
+                                            <i class="fas fa-clock mr-2"></i>${lessonMeta.duration}
+                                        </span>
+                                        <span class="flex items-center">
+                                            <i class="fas fa-book-open mr-2"></i>${pathMeta.title}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 md:mt-0">
+                                    <span class="bg-primary-500 text-white px-3 py-1 rounded-full text-sm">
+                                        ${pathMeta.level}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lesson Content -->
+                        <div class="p-4 md:p-6">
+                            <div class="prose max-w-none lesson-content">
+                                ${content}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Apply syntax highlighting
+                if (typeof hljs !== 'undefined') {
+                    document.querySelectorAll('pre code').forEach((block) => {
+                        hljs.highlightElement(block);
+                    });
+                }
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update lesson navigation in sidebar
+            updateLessonNavigation(meta) {
+                const navContainer = document.getElementById('lesson-navigation');
+                const navSection = document.getElementById('current-lesson-nav');
+                
+                if (navContainer && navSection) {
+                    navSection.classList.remove('hidden');
+                    
+                    navContainer.innerHTML = `
+                        <div class="mb-3">
+                            <h5 class="font-medium text-gray-700 mb-2">${meta.title}</h5>
+                            <div class="space-y-1">
+                                ${meta.lessonsMeta.map((lesson, index) => `
+                                    <button onclick="contentLoader.loadLesson('${this.currentPath}', ${index + 1})" 
+                                            class="w-full text-left px-3 py-2 rounded text-sm transition-colors ${index + 1 === this.currentLesson ? 'bg-primary-100 text-primary-700 border border-primary-200' : 'text-gray-600 hover:bg-gray-100'}">
+                                        <div class="flex items-center justify-between">
+                                            <span>${index + 1}. ${lesson.title}</span>
+                                            ${index + 1 === this.currentLesson ? '<i class="fas fa-play text-primary-500 text-xs"></i>' : ''}
+                                        </div>
+                                        <div class="text-xs text-gray-500 mt-1">${lesson.duration}</div>
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            // Update mobile navigation
+            updateMobileNavigation(currentLesson, totalLessons) {
+                const prevBtn = document.getElementById('mobile-prev');
+                const nextBtn = document.getElementById('mobile-next');
+                const progress = document.getElementById('mobile-progress');
+                
+                if (prevBtn) {
+                    prevBtn.disabled = currentLesson === 1;
+                    prevBtn.onclick = () => this.previousLesson();
+                }
+                
+                if (nextBtn) {
+                    nextBtn.disabled = currentLesson === totalLessons;
+                    nextBtn.onclick = () => this.nextLesson();
+                }
+                
+                if (progress) {
+                    progress.textContent = `Lesson ${currentLesson}/${totalLessons}`;
+                }
+            }
+
+            // Navigation methods
+            previousLesson() {
+                if (this.currentLesson > 1) {
+                    this.loadLesson(this.currentPath, this.currentLesson - 1);
+                }
+            }
+
+            nextLesson() {
+                if (this.currentPath && this.currentPathMeta) {
+                    if (this.currentLesson < this.currentPathMeta.lessons) {
+                        this.loadLesson(this.currentPath, this.currentLesson + 1);
+                    }
+                }
+            }
+
+            // Update navigation state
+            updateNavigation(meta) {
+                // Update browser title
+                document.title = `${meta.title} - CodeMentor Pro`;
+            }
+
+            // Render error state
+            renderError(message) {
+                const container = document.getElementById('lesson-content');
+                if (container) {
+                    container.innerHTML = `
+                        <div class="bg-white rounded-xl shadow-lg p-8 text-center">
+                            <i class="fas fa-exclamation-triangle text-yellow-500 text-4xl mb-4"></i>
+                            <h2 class="text-xl font-bold text-gray-800 mb-2">Content Not Available</h2>
+                            <p class="text-gray-600 mb-4">${message}</p>
+                            <button onclick="contentLoader.loadLearningPaths()" class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-lg transition-colors">
+                                Back to Learning Paths
+                            </button>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // Mobile Handler
+        class MobileHandler {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.setupMobileNavigation();
+                this.setupTouchEvents();
+            }
+
+            setupMobileNavigation() {
+                const sidebarToggle = document.getElementById('sidebar-toggle');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const sidebar = document.getElementById('sidebar');
+
+                if (sidebarToggle && sidebar) {
+                    sidebarToggle.addEventListener('click', () => {
+                        sidebar.classList.toggle('-translate-x-full');
+                    });
+                }
+
+                if (mobileMenu && sidebar) {
+                    mobileMenu.addEventListener('click', () => {
+                        sidebar.classList.toggle('-translate-x-full');
+                    });
+                }
+
+                // Close sidebar when clicking outside on mobile
+                document.addEventListener('click', (e) => {
+                    if (window.innerWidth < 768 && 
+                        !sidebar.contains(e.target) && 
+                        !sidebarToggle.contains(e.target) &&
+                        !mobileMenu.contains(e.target) &&
+                        !sidebar.classList.contains('-translate-x-full')) {
+                        sidebar.classList.add('-translate-x-full');
+                    }
+                });
+
+                // Handle window resize
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth >= 768) {
+                        sidebar.classList.remove('-translate-x-full');
+                    }
+                });
+            }
+
+            setupTouchEvents() {
+                // Add touch swipe support for mobile navigation
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                document.addEventListener('touchstart', e => {
+                    touchStartX = e.changedTouches[0].screenX;
+                });
+
+                document.addEventListener('touchend', e => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    this.handleSwipe();
+                });
+
+                this.handleSwipe = () => {
+                    const swipeThreshold = 50;
+                    const swipeDistance = touchEndX - touchStartX;
+
+                    if (Math.abs(swipeDistance) > swipeThreshold) {
+                        if (swipeDistance > 0) {
+                            // Swipe right - previous lesson
+                            contentLoader.previousLesson();
+                        } else {
+                            // Swipe left - next lesson
+                            contentLoader.nextLesson();
+                        }
+                    }
+                };
+            }
+        }
+
+        // Initialize content loader
+        const contentLoader = new ContentLoader();
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load learning paths
+            contentLoader.loadLearningPaths();
+            
+            // Initialize mobile handler
+            const mobileHandler = new MobileHandler();
+            
+            // Add keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    contentLoader.previousLesson();
+                } else if (e.key === 'ArrowRight') {
+                    contentLoader.nextLesson();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

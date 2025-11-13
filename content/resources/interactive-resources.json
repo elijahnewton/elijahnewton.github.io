@@ -1,0 +1,299 @@
+[
+  {
+    "id": "salary-calculator-c",
+    "title": "Salary Calculator in C",
+    "description": "Calculate employee salaries with deductions and bonuses",
+    "level": "BEGINNER",
+    "category": "C Programming",
+    "duration": "Week 1",
+    "rating": "4.8",
+    "downloads": 1250,
+    "gradient": "from-blue-500 to-blue-600",
+    "links": [
+      {
+        "type": "video",
+        "label": "Video Tutorial",
+        "icon": "fas fa-play-circle"
+      },
+      {
+        "type": "notes",
+        "label": "Study Notes",
+        "icon": "fas fa-file-text"
+      },
+      {
+        "type": "code",
+        "label": "Code Template",
+        "icon": "fas fa-code"
+      },
+      {
+        "type": "slides",
+        "label": "Slides",
+        "icon": "fas fa-presentation-screen"
+      }
+    ]
+  },
+  {
+    "id": "portfolio-website",
+    "title": "Responsive Portfolio Website",
+    "description": "Build a mobile-friendly personal portfolio with HTML, CSS, and JavaScript",
+    "level": "INTERMEDIATE",
+    "category": "Web Development",
+    "duration": "Week 3",
+    "rating": "4.9",
+    "downloads": 890,
+    "gradient": "from-green-500 to-green-600",
+    "links": [
+      {
+        "type": "video",
+        "label": "Video Tutorial",
+        "icon": "fas fa-play-circle"
+      },
+      {
+        "type": "notes",
+        "label": "Design Guide",
+        "icon": "fas fa-file-text"
+      },
+      {
+        "type": "code",
+        "label": "Starter Files",
+        "icon": "fas fa-code"
+      },
+      {
+        "type": "slides",
+        "label": "UI/UX Principles",
+        "icon": "fas fa-presentation-screen"
+      }
+    ]
+  },
+  {
+    "id": "password-checker",
+    "title": "Password Strength Checker",
+    "description": "Implement security algorithms to check password strength in Python",
+    "level": "ADVANCED",
+    "category": "Cyber Security",
+    "duration": "Week 2",
+    "rating": "4.7",
+    "downloads": 567,
+    "gradient": "from-purple-500 to-purple-600",
+    "links": [
+      {
+        "type": "video",
+        "label": "Video Tutorial",
+        "icon": "fas fa-play-circle"
+      },
+      {
+        "type": "notes",
+        "label": "Security Notes",
+        "icon": "fas fa-file-text"
+      },
+      {
+        "type": "code",
+        "label": "Algorithm Code",
+        "icon": "fas fa-code"
+      },
+      {
+        "type": "slides",
+        "label": "Theory Slides",
+        "icon": "fas fa-presentation-screen"
+      }
+    ]
+  },
+  {
+    "id": "student-management",
+    "title": "Student Management System",
+    "description": "Complete C application for managing student records with file I/O",
+    "level": "ADVANCED",
+    "category": "C Programming",
+    "duration": "Final Project",
+    "rating": "4.6",
+    "downloads": 723,
+    "gradient": "from-red-500 to-red-600",
+    "links": [
+      {
+        "type": "video",
+        "label": "Project Walkthrough",
+        "icon": "fas fa-play-circle"
+      },
+      {
+        "type": "notes",
+        "label": "Requirements Doc",
+        "icon": "fas fa-file-text"
+      },
+      {
+        "type": "code",
+        "label": "Source Code",
+        "icon": "fas fa-code"
+      },
+      {
+        "type": "slides",
+        "label": "Architecture",
+        "icon": "fas fa-presentation-screen"
+      }
+    ]
+  },
+  {
+    "id": "todo-app-js",
+    "title": "Todo List Application",
+    "description": "Build an interactive todo app with JavaScript and local storage",
+    "level": "INTERMEDIATE",
+    "category": "Web Development",
+    "duration": "Week 4",
+    "rating": "4.8",
+    "downloads": 1100,
+    "gradient": "from-yellow-500 to-yellow-600",
+    "links": [
+      {
+        "type": "video",
+        "label": "Video Tutorial",
+        "icon": "fas fa-play-circle"
+      },
+      {
+        "type": "notes",
+        "label": "JavaScript Guide",
+        "icon": "fas fa-file-text"
+      },
+      {
+        "type": "code",
+        "label": "Starter Template",
+        "icon": "fas fa-code"
+      },
+      {
+        "type": "slides",
+        "label": "DOM Manipulation",
+        "icon": "fas fa-presentation-screen"
+      }
+    ]
+  },
+  {
+    "id": "data-visualization",
+    "title": "Data Visualization with Python",
+    "description": "Create beautiful charts and graphs using Matplotlib and Seaborn",
+    "level": "INTERMEDIATE",
+    "category": "Python Programming",
+    "duration": "Week 5",
+    "rating": "4.5",
+    "downloads": 450,
+    "gradient": "from-indigo-500 to-indigo-600",
+    "links": [
+      {
+        "type": "video",
+        "label": "Video Tutorial",
+        "icon": "fas fa-play-circle"
+      },
+      {
+        "type": "notes",
+        "label": "Data Analysis Guide",
+        "icon": "fas fa-file-text"
+      },
+      {
+        "type": "code",
+        "label": "Jupyter Notebook",
+        "icon": "fas fa-code"
+      },
+      {
+        "type": "slides",
+        "label": "Visualization Tips",
+        "icon": "fas fa-presentation-screen"
+      }
+    ]
+  },
+  {
+    "id": "network-scanner",
+    "title": "Network Security Scanner",
+    "description": "Build a Python tool to scan networks and detect vulnerabilities",
+    "level": "ADVANCED",
+    "category": "Cyber Security",
+    "duration": "Week 6",
+    "rating": "4.9",
+    "downloads": 320,
+    "gradient": "from-pink-500 to-pink-600",
+    "links": [
+      {
+        "type": "video",
+        "label": "Video Tutorial",
+        "icon": "fas fa-play-circle"
+      },
+      {
+        "type": "notes",
+        "label": "Security Protocols",
+        "icon": "fas fa-file-text"
+      },
+      {
+        "type": "code",
+        "label": "Scanner Code",
+        "icon": "fas fa-code"
+      },
+      {
+        "type": "slides",
+        "label": "Network Theory",
+        "icon": "fas fa-presentation-screen"
+      }
+    ]
+  },
+  {
+    "id": "sorting-algorithms",
+    "title": "Sorting Algorithms Visualization",
+    "description": "Visualize and compare different sorting algorithms in action",
+    "level": "INTERMEDIATE",
+    "category": "Data Structures",
+    "duration": "Week 3",
+    "rating": "4.7",
+    "downloads": 680,
+    "gradient": "from-teal-500 to-teal-600",
+    "links": [
+      {
+        "type": "video",
+        "label": "Video Tutorial",
+        "icon": "fas fa-play-circle"
+      },
+      {
+        "type": "notes",
+        "label": "Algorithm Guide",
+        "icon": "fas fa-file-text"
+      },
+      {
+        "type": "code",
+        "label": "Visualization Code",
+        "icon": "fas fa-code"
+      },
+      {
+        "type": "slides",
+        "label": "Complexity Analysis",
+        "icon": "fas fa-presentation-screen"
+      }
+    ]
+  },
+  {
+    "id": "api-integration",
+    "title": "REST API Integration",
+    "description": "Learn to consume REST APIs with JavaScript Fetch API",
+    "level": "INTERMEDIATE",
+    "category": "Web Development",
+    "duration": "Week 5",
+    "rating": "4.6",
+    "downloads": 920,
+    "gradient": "from-orange-500 to-orange-600",
+    "links": [
+      {
+        "type": "video",
+        "label": "Video Tutorial",
+        "icon": "fas fa-play-circle"
+      },
+      {
+        "type": "notes",
+        "label": "API Documentation",
+        "icon": "fas fa-file-text"
+      },
+      {
+        "type": "code",
+        "label": "Example Projects",
+        "icon": "fas fa-code"
+      },
+      {
+        "type": "slides",
+        "label": "HTTP Methods",
+        "icon": "fas fa-presentation-screen"
+      }
+    ]
+  }
+]

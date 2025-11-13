@@ -1,0 +1,97 @@
+{
+  "id": "web-development",
+  "title": "Full Stack Web Development", 
+  "description": "Build modern websites with HTML, CSS, JavaScript and complete projects",
+  "lessons": 12,
+  "duration": "30 hours",
+  "level": "Beginner to Intermediate",
+  "prerequisites": "Basic computer literacy",
+  "instructor": "CodeMentor Pro Team",
+  "lastUpdated": "2025-01-01",
+  "lessonsMeta": [
+    {
+      "id": "lesson-1",
+      "title": "Web Fundamentals & HTML Basics",
+      "duration": "2.5 hours",
+      "objectives": ["Understand how web works", "Learn HTML structure", "Create first web page"],
+      "keywords": ["html", "web", "basics", "structure"]
+    },
+    {
+      "id": "lesson-2",
+      "title": "HTML5 Semantic Elements & Forms",
+      "duration": "2.5 hours",
+      "objectives": ["Use semantic HTML5", "Create web forms", "Understand accessibility"],
+      "keywords": ["html5", "semantic", "forms", "accessibility"]
+    },
+    {
+      "id": "lesson-3",
+      "title": "CSS Fundamentals & Box Model",
+      "duration": "2.5 hours",
+      "objectives": ["Learn CSS syntax", "Understand box model", "Apply basic styling"],
+      "keywords": ["css", "styling", "box model", "selectors"]
+    },
+    {
+      "id": "lesson-4",
+      "title": "CSS Layouts: Flexbox & Grid",
+      "duration": "2.5 hours",
+      "objectives": ["Master CSS Flexbox", "Learn CSS Grid", "Create responsive layouts"],
+      "keywords": ["flexbox", "grid", "layout", "responsive"]
+    },
+    {
+      "id": "lesson-5",
+      "title": "Responsive Design & CSS Frameworks",
+      "duration": "2.5 hours",
+      "objectives": ["Implement responsive design", "Use media queries", "Explore CSS frameworks"],
+      "keywords": ["responsive", "media queries", "frameworks", "mobile"]
+    },
+    {
+      "id": "lesson-6",
+      "title": "JavaScript Basics: Syntax & DOM",
+      "duration": "2.5 hours",
+      "objectives": ["Learn JavaScript syntax", "Manipulate DOM", "Handle events"],
+      "keywords": ["javascript", "syntax", "dom", "events"]
+    },
+    {
+      "id": "lesson-7",
+      "title": "JavaScript Functions & Events",
+      "duration": "2.5 hours",
+      "objectives": ["Create functions", "Handle user events", "Understand scope"],
+      "keywords": ["functions", "events", "scope", "callbacks"]
+    },
+    {
+      "id": "lesson-8",
+      "title": "JavaScript Arrays & Objects",
+      "duration": "2.5 hours",
+      "objectives": ["Work with arrays", "Create objects", "Use array methods"],
+      "keywords": ["arrays", "objects", "methods", "data structures"]
+    },
+    {
+      "id": "lesson-9",
+      "title": "Asynchronous JavaScript & APIs",
+      "duration": "2.5 hours",
+      "objectives": ["Understand async programming", "Work with APIs", "Use fetch API"],
+      "keywords": ["async", "apis", "fetch", "promises"]
+    },
+    {
+      "id": "lesson-10",
+      "title": "Modern JavaScript (ES6+)",
+      "duration": "2.5 hours",
+      "objectives": ["Learn ES6+ features", "Use modern syntax", "Understand modules"],
+      "keywords": ["es6", "modern", "syntax", "modules"]
+    },
+    {
+      "id": "lesson-11",
+      "title": "Project Architecture & Tools",
+      "duration": "2.5 hours",
+      "objectives": ["Plan web projects", "Use development tools", "Understand project structure"],
+      "keywords": ["architecture", "tools", "planning", "structure"]
+    },
+    {
+      "id": "lesson-12",
+      "title": "Capstone: Personal Portfolio Website",
+      "duration": "2.5 hours",
+      "objectives": ["Build complete portfolio", "Integrate all concepts", "Deploy website"],
+      "keywords": ["capstone", "portfolio", "deployment", "complete"]
+    }
+  ]
+}

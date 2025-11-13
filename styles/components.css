@@ -1,0 +1,147 @@
+/* Component-specific styles */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.progress-bar {
+    transition: width 0.5s ease-in-out;
+}
+
+.lesson-complete {
+    background-color: #d1fae5;
+    color: #065f46;
+    border-color: #a7f3d0;
+}
+
+.lesson-current {
+    background-color: #e0f2fe;
+    color: #075985;
+    border-color: #7dd3fc;
+    font-weight: 600;
+}
+
+.lesson-upcoming {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    border-color: #d1d5db;
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.3s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+@keyframes slideInLeft {
+    from { 
+        transform: translateX(-100%); 
+    }
+    to { 
+        transform: translateX(0); 
+    }
+}
+
+@keyframes slideInRight {
+    from { 
+        transform: translateX(100%); 
+    }
+    to { 
+        transform: translateX(0); 
+    }
+}
+
+/* Badge styles */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+}
+
+.badge-beginner {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-intermediate {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.badge-advanced {
+    background-color: #fce7f3;
+    color: #be185d;
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* Code block styles */
+.code-block {
+    position: relative;
+    background-color: #1f2937;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.code-block pre {
+    margin: 0;
+    overflow-x: auto;
+    color: #10b981;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #374151;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    color: #d1d5db;
+    font-size: 0.75rem;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background-color: #4b5563;
+    color: #ffffff;
+}

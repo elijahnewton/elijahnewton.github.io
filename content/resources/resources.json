@@ -1,0 +1,40 @@
+{
+  "resources": [
+    {
+      "id": "c-cheatsheet",
+      "title": "C Programming Quick Reference",
+      "description": "Comprehensive cheat sheet covering C syntax, functions, and common patterns",
+      "type": "pdf",
+      "category": "C Programming",
+      "duration": "15 min",
+      "url": "assets/resources/c-cheatsheet.pdf"
+    },
+    {
+      "id": "html-css-tutorial",
+      "title": "HTML & CSS Video Course",
+      "description": "Complete video tutorial series covering modern HTML5 and CSS3",
+      "type": "video",
+      "category": "Web Development", 
+      "duration": "2 hours",
+      "url": "assets/resources/html-css-tutorial.mp4"
+    },
+    {
+      "id": "c-exercises",
+      "title": "C Programming Exercises",
+      "description": "Interactive coding challenges with automatic testing",
+      "type": "interactive",
+      "category": "C Programming",
+      "duration": "1 hour",
+      "url": "content/resources/c-exercises.html"
+    },
+    {
+      "id": "web-templates",
+      "title": "Starter Website Templates",
+      "description": "Collection of ready-to-use HTML/CSS templates for various projects",
+      "type": "code",
+      "category": "Web Development",
+      "duration": "N/A",
+      "url": "content/resources/web-templates.html"
+    }
+  ]
+}
