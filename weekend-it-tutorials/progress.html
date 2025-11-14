@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Progress - CodeMentor Pro</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LYXC6KFV5D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-LYXC6KFV5D');
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-primary-700 to-primary-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-graduation-cap text-2xl"></i>
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-bold">CodeMentor Pro</h1>
+                        <p class="text-primary-100 text-xs md:text-sm">Master Programming • Build Projects</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2 md:space-x-4">
+                    <a href="progress.html" class="bg-primary-600 hover:bg-primary-500 px-3 py-2 md:px-4 md:py-2 rounded-lg transition-colors text-sm">
+                        <i class="fas fa-chart-line mr-1 md:mr-2"></i>Progress
+                    </a>
+                    <a href="index.html" class="bg-white text-primary-700 hover:bg-gray-100 px-3 py-2 md:px-4 md:py-2 rounded-lg transition-colors font-semibold text-sm">
+                        <i class="fas fa-home mr-1 md:mr-2"></i>Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Stats -->
+    <div class="bg-white shadow-md border-b">
+        <div class="container mx-auto px-4 py-3">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="p-3">
+                    <div class="text-sm text-gray-500">Courses Enrolled</div>
+                    <div class="text-2xl font-bold">8</div>
+                </div>
+                <div class="p-3">
+                    <div class="text-sm text-gray-500">Courses Completed</div>
+                    <div class="text-2xl font-bold">3</div>
+                </div>
+                <div class="p-3">
+                    <div class="text-sm text-gray-500">Hours Learned</div>
+                    <div class="text-2xl font-bold">124</div>
+                </div>
+                <div class="p-3">
+                    <div class="text-sm text-gray-500">Streak</div>
+                    <div class="text-2xl font-bold">12 days</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6 flex-1">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Left: Courses -->
+            <section class="lg:col-span-2 space-y-6">
+                <div class="bg-white shadow rounded-lg p-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-lg font-semibold">Active Courses</h2>
+                        <div class="text-sm text-gray-500">Overview of progress</div>
+                    </div>
+
+                    <ul class="space-y-4">
+                        <!-- Course item -->
+                        <li class="p-3 bg-gray-50 rounded-md flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-lg bg-primary-600 text-white flex items-center justify-center text-lg font-bold">JS</div>
+                                <div>
+                                    <div class="font-semibold">JavaScript Essentials</div>
+                                    <div class="text-xs text-gray-500">Instructor: A. Kumar • 24 lessons</div>
+                                </div>
+                            </div>
+                            <div class="w-1/3 md:w-1/4">
+                                <div class="text-xs text-gray-500 mb-1">Progress <span class="font-semibold">72%</span></div>
+                                <div class="w-full h-2 bg-gray-200 rounded overflow-hidden">
+                                    <div class="h-2 bg-primary-600 rounded" data-progress="72" style="width:72%"></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="p-3 bg-gray-50 rounded-md flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-lg bg-green-600 text-white flex items-center justify-center text-lg font-bold">PY</div>
+                                <div>
+                                    <div class="font-semibold">Python for Data</div>
+                                    <div class="text-xs text-gray-500">Instructor: L. Chen • 18 lessons</div>
+                                </div>
+                            </div>
+                            <div class="w-1/3 md:w-1/4">
+                                <div class="text-xs text-gray-500 mb-1">Progress <span class="font-semibold">45%</span></div>
+                                <div class="w-full h-2 bg-gray-200 rounded overflow-hidden">
+                                    <div class="h-2 bg-green-600 rounded" data-progress="45" style="width:45%"></div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="p-3 bg-gray-50 rounded-md flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-lg font-bold">RD</div>
+                                <div>
+                                    <div class="font-semibold">React & Redux</div>
+                                    <div class="text-xs text-gray-500">Instructor: M. Santos • 36 lessons</div>
+                                </div>
+                            </div>
+                            <div class="w-1/3 md:w-1/4">
+                                <div class="text-xs text-gray-500 mb-1">Progress <span class="font-semibold">89%</span></div>
+                                <div class="w-full h-2 bg-gray-200 rounded overflow-hidden">
+                                    <div class="h-2 bg-indigo-600 rounded" data-progress="89" style="width:89%"></div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Details / Recent modules -->
+                <div class="bg-white shadow rounded-lg p-4">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-lg font-semibold">Recent Activity</h2>
+                        <a href="#" class="text-sm text-primary-700 hover:underline">View all</a>
+                    </div>
+
+                    <ul class="divide-y">
+                        <li class="py-3 flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <div class="text-sm">
+                                Completed "Async JS" • <span class="text-gray-500">2 days ago</span>
+                            </div>
+                        </li>
+                        <li class="py-3 flex items-start">
+                            <i class="fas fa-play-circle text-primary-600 mt-1 mr-3"></i>
+                            <div class="text-sm">
+                                Watched "Redux Toolkit Overview" • <span class="text-gray-500">4 days ago</span>
+                            </div>
+                        </li>
+                        <li class="py-3 flex items-start">
+                            <i class="fas fa-book-reader text-yellow-500 mt-1 mr-3"></i>
+                            <div class="text-sm">
+                                Started "Python for Data" • <span class="text-gray-500">6 days ago</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Right: Sidebar -->
+            <aside class="space-y-6">
+                <div class="bg-white shadow rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-semibold">Achievements</h3>
+                        <span class="text-xs text-gray-500">3 unlocked</span>
+                    </div>
+                    <div class="grid grid-cols-3 gap-3">
+                        <div class="text-center">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-yellow-400 text-white flex items-center justify-center">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <div class="text-xs mt-2">Streak</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-primary-600 text-white flex items-center justify-center">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="text-xs mt-2">Certificate</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-14 h-14 mx-auto rounded-full bg-green-600 text-white flex items-center justify-center">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="text-xs mt-2">Top Student</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-semibold">Goal</h3>
+                        <span class="text-xs text-gray-500">Monthly</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-3">Finish "React & Redux" and complete 10 practice projects.</div>
+                    <div class="text-xs text-gray-500 mb-2">Completion: <span class="font-semibold">60%</span></div>
+                    <div class="w-full h-3 bg-gray-200 rounded overflow-hidden">
+                        <div class="h-3 bg-primary-700 rounded" style="width:60%"></div>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow rounded-lg p-4">
+                    <h3 class="font-semibold mb-3">Quick Actions</h3>
+                    <div class="space-y-2">
+                        <a class="block text-center bg-primary-600 text-white py-2 rounded hover:bg-primary-500" href="#"><i class="fas fa-play mr-2"></i>Resume Last Lesson</a>
+                        <a class="block text-center border border-primary-600 text-primary-700 py-2 rounded hover:bg-primary-50" href="#"><i class="fas fa-book mr-2"></i>Browse Library</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-6">
+        <div class="container mx-auto px-4 py-4 text-sm text-gray-600 flex flex-col md:flex-row justify-between items-center">
+            <div>© <span id="year"></span> MUSIITWA ELIJAH . DIT/25W/U/A1128 • All rights reserved</div>
+            <div class="space-x-3 mt-2 md:mt-0">
+                <a href="#" class="hover:underline">Terms</a>
+                <a href="#" class="hover:underline">Privacy</a>
+                <a href="#" class="hover:underline">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Small script to handle dynamic bits -->
+    <script>
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Accessibility: set ARIA values for progress bars based on data-progress
+        document.querySelectorAll('[data-progress]').forEach(function(el){
+            var val = parseInt(el.getAttribute('data-progress') || '0', 10);
+            el.setAttribute('role','progressbar');
+            el.setAttribute('aria-valuemin','0');
+            el.setAttribute('aria-valuemax','100');
+            el.setAttribute('aria-valuenow', String(val));
+            // small animation
+            el.style.transition = 'width 700ms ease';
+            // ensure width matches data attribute if style was not set inline
+            if (!el.style.width) el.style.width = val + '%';
+        });
+    </script>
+</body>
+</html>

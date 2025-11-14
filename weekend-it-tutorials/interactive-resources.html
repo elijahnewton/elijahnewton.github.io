@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0369a1" />
+    <title>Interactive Resources — CodeMentor Pro</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LYXC6KFV5D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-LYXC6KFV5D');
+    </script>
+
+    <!-- Tailwind (small, mobile-first utilities) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome (icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Minimal local tweaks (optional) -->
+    <style>
+        :root { --primary: #0369a1; --accent: #0ea5e9; }
+        html,body { -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+        /* Prevent container from feeling too wide on mobile */
+        .container-sm { max-width: 980px; margin-left:auto; margin-right:auto; padding-left:1rem; padding-right:1rem;}
+    </style>
+</head>
+<body class="bg-white text-slate-800 min-h-screen antialiased">
+
+    <!-- Skip link for accessibility -->
+    <a class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 bg-white px-3 py-2 rounded shadow" href="#main">Skip to content</a>
+
+    <!-- Top bar (compact, mobile-first) -->
+    <header class="bg-white border-b">
+        <div class="container-sm flex items-center justify-between py-3">
+            <div class="flex items-center gap-3">
+                <button aria-label="Open menu" class="p-2 rounded-md hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-graduation-cap text-sky-600 text-xl"></i>
+                    <div>
+                        <div class="text-sm font-semibold">CodeMentor Pro</div>
+                        <div class="text-xs text-slate-500">Master programming</div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="flex items-center gap-2">
+                <a href="index.html" class="inline-flex items-center gap-2 px-3 py-2 text-sm rounded-md bg-sky-50 text-sky-700 hover:bg-sky-100"> 
+                    <i class="fas fa-home"></i><span class="hidden sm:inline">Home</span>
+                </a>
+                <a href="progress.html" class="inline-flex items-center gap-2 px-3 py-2 text-sm rounded-md bg-sky-600 text-white hover:bg-sky-700">
+                    <i class="fas fa-chart-line"></i><span class="hidden sm:inline">Progress</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero & Search -->
+    <main id="main" class="container-sm py-6">
+        <section class="mb-6">
+            <h1 class="text-2xl font-bold text-sky-800">Interactive Learning Resources</h1>
+            <p class="mt-1 text-sm text-slate-500">Compact, mobile-first access to tutorials, templates and practice exercises.</p>
+        </section>
+
+        <section class="mb-6">
+            <form role="search" class="flex gap-2">
+                <label for="q" class="sr-only">Search tutorials</label>
+                <div class="flex-1 relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"><i class="fas fa-search"></i></span>
+                    <input id="q" type="search" placeholder="Search tutorials, code, or concepts…" class="w-full pl-10 pr-3 py-3 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-sky-300" />
+                </div>
+
+                <select aria-label="Filter category" class="w-36 px-3 py-3 border border-slate-200 rounded-lg text-sm bg-white">
+                    <option>All</option>
+                    <option>C Programming</option>
+                    <option>Web Dev</option>
+                    <option>Cyber</option>
+                    <option>Data Structures</option>
+                </select>
+            </form>
+        </section>
+
+        <!-- Resource cards (single column on mobile, grid on larger screens) -->
+        <section id="resources" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Example card (duplicate or populate via JS) -->
+            <article class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition" role="article" aria-labelledby="r1">
+                <div class="flex items-start gap-3">
+                    <div class="flex-shrink-0 bg-sky-50 text-sky-600 rounded-lg p-3">
+                        <i class="fas fa-code text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 id="r1" class="text-sm font-semibold text-slate-800">Web Development Starter</h3>
+                        <p class="text-xs text-slate-500 mt-1">Small projects, templates and live examples to get started quickly.</p>
+                        <div class="mt-3 flex gap-2">
+                            <a href="#" class="inline-flex items-center gap-2 px-3 py-2 text-xs rounded-md bg-sky-600 text-white hover:bg-sky-700">Open <i class="fas fa-arrow-right text-[10px]"></i></a>
+                            <button class="inline-flex items-center gap-2 px-3 py-2 text-xs rounded-md border border-slate-200 text-slate-700 hover:bg-slate-50">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition" role="article" aria-labelledby="r2">
+                <div class="flex items-start gap-3">
+                    <div class="flex-shrink-0 bg-emerald-50 text-emerald-600 rounded-lg p-3">
+                        <i class="fas fa-terminal text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 id="r2" class="text-sm font-semibold text-slate-800">Code Challenges</h3>
+                        <p class="text-xs text-slate-500 mt-1">Bite-sized problems with instant feedback — 10–20 minute sessions.</p>
+                        <div class="mt-3 flex gap-2">
+                            <a href="#" class="inline-flex items-center gap-2 px-3 py-2 text-xs rounded-md bg-emerald-600 text-white hover:bg-emerald-700">Start</a>
+                            <button class="inline-flex items-center gap-2 px-3 py-2 text-xs rounded-md border border-slate-200 text-slate-700 hover:bg-slate-50">Details</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="bg-white border border-slate-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition" role="article" aria-labelledby="r3">
+                <div class="flex items-start gap-3">
+                    <div class="flex-shrink-0 bg-purple-50 text-purple-600 rounded-lg p-3">
+                        <i class="fas fa-file-code text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 id="r3" class="text-sm font-semibold text-slate-800">Project Templates</h3>
+                        <p class="text-xs text-slate-500 mt-1">Scaffolded starter repos for web, C and data projects.</p>
+                        <div class="mt-3 flex gap-2">
+                            <a href="#" class="inline-flex items-center gap-2 px-3 py-2 text-xs rounded-md bg-purple-600 text-white hover:bg-purple-700">Browse</a>
+                            <button class="inline-flex items-center gap-2 px-3 py-2 text-xs rounded-md border border-slate-200 text-slate-700 hover:bg-slate-50">Fork</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Add more cards or dynamically load into this grid -->
+        </section>
+
+        <!-- Practice quick links -->
+        <section class="mt-6 grid gap-3 grid-cols-1 sm:grid-cols-3">
+            <div class="rounded-xl border border-slate-100 p-3 bg-white text-center">
+                <h4 class="text-sm font-semibold text-slate-800">Quizzes</h4>
+                <p class="text-xs text-slate-500 mt-1">Fast knowledge checks</p>
+                <a href="#" class="mt-3 inline-block px-3 py-2 bg-sky-600 text-white text-xs rounded-md">Take Quiz</a>
+            </div>
+            <div class="rounded-xl border border-slate-100 p-3 bg-white text-center">
+                <h4 class="text-sm font-semibold text-slate-800">Templates</h4>
+                <p class="text-xs text-slate-500 mt-1">Starter projects</p>
+                <a href="#" class="mt-3 inline-block px-3 py-2 bg-emerald-600 text-white text-xs rounded-md">Browse</a>
+            </div>
+            <div class="rounded-xl border border-slate-100 p-3 bg-white text-center">
+                <h4 class="text-sm font-semibold text-slate-800">Challenges</h4>
+                <p class="text-xs text-slate-500 mt-1">Practice problems</p>
+                <a href="#" class="mt-3 inline-block px-3 py-2 bg-purple-600 text-white text-xs rounded-md">Start</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sticky bottom navigation for mobile -->
+    <nav aria-label="Primary" class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[94%] max-w-md bg-white border border-slate-100 rounded-full shadow-lg sm:hidden">
+        <ul class="flex justify-between px-4 py-2">
+            <li><a href="index.html" class="flex flex-col items-center text-slate-600 text-xs" aria-current="page"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href="#" class="flex flex-col items-center text-slate-600 text-xs"><i class="fas fa-search"></i><span>Search</span></a></li>
+            <li><a href="progress.html" class="flex flex-col items-center text-slate-600 text-xs"><i class="fas fa-chart-line"></i><span>Progress</span></a></li>
+            <li><a href="#" class="flex flex-col items-center text-slate-600 text-xs"><i class="fas fa-user-circle"></i><span>Account</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- Footer (keeps simple on mobile) -->
+    <footer class="mt-8 border-t">
+        <div class="container-sm py-6 text-xs text-slate-500">
+            <div class="flex justify-between items-center">
+                <div>© 2025 MUSIITWA ELIJAH</div>
+                <div class="hidden sm:flex gap-3">
+                    <a href="#" class="text-slate-600"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-slate-600"><i class="fab fa-discord"></i></a>
+                    <a href="#" class="text-slate-600"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightweight script: example to progressively enhance (defer) -->
+    <script defer>
+        // Simple example: switch focus to search when pressing '/'
+        document.addEventListener('keydown', function(e){
+            if (e.key === '/' && !e.metaKey && !e.ctrlKey && !e.altKey) {
+                const q = document.getElementById('q');
+                if (q) { e.preventDefault(); q.focus(); q.select(); }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+  "lessons": [
+    {
+      "lessonId": "lesson-1",
+      "exercises": [
+        {
+          "id": "ex1-1",
+          "title": "Hello World Modification",
+          "description": "Modify the Hello World program to display your name and favorite color",
+          "difficulty": "beginner",
+          "expectedOutput": "Hello, John! My favorite color is blue.",
+          "hints": [
+            "Use multiple printf statements",
+            "Remember to include newline characters"
+          ]
+        },
+        {
+          "id": "ex1-2", 
+          "title": "Environment Setup Verification",
+          "description": "Create a program that displays your compiler version and system information",
+          "difficulty": "beginner",
+          "hints": [
+            "Use predefined macros like __DATE__ and __TIME__",
+            "Check documentation for compiler-specific macros"
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "lesson-2",
+      "exercises": [
+        {
+          "id": "ex2-1",
+          "title": "Simple Calculator",
+          "description": "Create a calculator that takes two numbers and displays their sum, difference, product, and quotient",
+          "difficulty": "beginner",
+          "hints": [
+            "Use scanf to get user input",
+            "Declare variables for the two numbers and results",
+            "Use appropriate format specifiers"
+          ]
+        }
+      ]
+    }
+  ]
+}

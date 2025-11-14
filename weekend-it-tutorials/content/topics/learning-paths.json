@@ -1,0 +1,26 @@
+{
+  "paths": [
+    {
+      "id": "c-programming",
+      "title": "C Programming Mastery",
+      "description": "Learn C programming from basics to advanced concepts with hands-on projects",
+      "lessons": 12,
+      "duration": "24 hours",
+      "level": "Beginner to Advanced",
+      "icon": "fas fa-cogs",
+      "color": "blue",
+      "contentDir": "c-programming"
+    },
+    {
+      "id": "web-development",
+      "title": "Full Stack Web Development",
+      "description": "Build modern websites with HTML, CSS, JavaScript and complete projects",
+      "lessons": 12,
+      "duration": "30 hours",
+      "level": "Beginner to Intermediate",
+      "icon": "fas fa-code",
+      "color": "green",
+      "contentDir": "web-development"
+    }
+  ]
+}
