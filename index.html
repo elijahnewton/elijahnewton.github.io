@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteTech Solutions - Uganda's Top IT Partner</title>
+    
+    <!-- Tailwind CSS (Utility classes) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ================= CSS STYLES ================= -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Smooth Page Transitions */
+        .page-section {
+            animation: slideUp 0.5s ease-out;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero Background - African Tech Context */
+        .hero-bg {
+            /* Image: Diverse team meeting */
+            background-image: linear-gradient(rgba(13, 71, 161, 0.9), rgba(13, 71, 161, 0.75)), url('https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Sidebar Transition */
+        #sidebar-menu {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .sidebar-closed { transform: translateX(100%); }
+        .sidebar-open { transform: translateX(0); }
+
+        /* Button Hover Animations */
+        .btn-hover-effect {
+            transition: all 0.3s ease;
+        }
+        .btn-hover-effect:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Card Hover Effects */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #1e3a8a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #1e40af; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen relative overflow-x-hidden selection:bg-blue-500 selection:text-white">
+
+    <!-- ================= HEADER ================= -->
+    <header class="bg-white shadow-lg sticky top-0 z-40 backdrop-blur-md bg-opacity-95">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2 cursor-pointer group" onclick="navigateTo('home')">
+                <div class="bg-blue-900 p-2 rounded-lg group-hover:bg-blue-800 transition">
+                    <i data-lucide="cpu" class="h-6 w-6 text-white"></i>
+                </div>
+                <span class="text-2xl font-extrabold text-blue-900 tracking-tight">EliteTech</span>
+            </div>
+
+            <!-- Sandwich Menu Button -->
+            <button onclick="toggleMenu()" class="flex items-center gap-2 p-2 hover:bg-blue-50 rounded-full transition duration-300 focus:outline-none group border border-transparent hover:border-blue-100">
+                <span class="hidden sm:block font-semibold text-gray-600 group-hover:text-blue-900">Menu</span>
+                <i data-lucide="menu" class="h-8 w-8 text-blue-900 transform group-hover:rotate-180 transition duration-500"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ================= SIDEBAR NAVIGATION ================= -->
+    <!-- Overlay -->
+    <div id="menu-overlay" onclick="toggleMenu()" class="fixed inset-0 bg-slate-900/60 z-40 hidden transition-opacity opacity-0 backdrop-blur-sm"></div>
+    
+    <!-- Sidebar -->
+    <div id="sidebar-menu" class="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 sidebar-closed flex flex-col border-l border-gray-100">
+        <div class="p-5 flex justify-between items-center border-b bg-blue-50">
+            <span class="text-xl font-bold text-blue-900">Navigation</span>
+            <button onclick="toggleMenu()" class="p-2 hover:bg-red-100 hover:text-red-600 rounded-full transition">
+                <i data-lucide="x" class="h-6 w-6"></i>
+            </button>
+        </div>
+        <nav class="flex-grow p-6 flex flex-col space-y-3">
+            <button onclick="navigateTo('home')" class="flex items-center space-x-4 p-4 rounded-xl hover:bg-blue-50 text-gray-700 hover:text-blue-900 transition text-lg font-medium hover:translate-x-2 duration-300">
+                <i data-lucide="home" class="w-5 h-5"></i> <span>Home</span>
+            </button>
+            <button onclick="navigateTo('services')" class="flex items-center space-x-4 p-4 rounded-xl hover:bg-blue-50 text-gray-700 hover:text-blue-900 transition text-lg font-medium hover:translate-x-2 duration-300">
+                <i data-lucide="briefcase" class="w-5 h-5"></i> <span>Services</span>
+            </button>
+            <button onclick="navigateTo('projects')" class="flex items-center space-x-4 p-4 rounded-xl hover:bg-blue-50 text-gray-700 hover:text-blue-900 transition text-lg font-medium hover:translate-x-2 duration-300">
+                <i data-lucide="folder-check" class="w-5 h-5"></i> <span>Our Projects</span>
+            </button>
+            <button onclick="navigateTo('about')" class="flex items-center space-x-4 p-4 rounded-xl hover:bg-blue-50 text-gray-700 hover:text-blue-900 transition text-lg font-medium hover:translate-x-2 duration-300">
+                <i data-lucide="info" class="w-5 h-5"></i> <span>About Us</span>
+            </button>
+            <button onclick="navigateTo('contact')" class="flex items-center space-x-4 p-4 rounded-xl bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-blue-500/30 transition text-lg font-medium mt-4 btn-hover-effect">
+                <i data-lucide="mail" class="w-5 h-5"></i> <span>Contact Us</span>
+            </button>
+        </nav>
+        <div class="p-6 bg-gray-50 border-t">
+            <p class="text-xs text-gray-500 text-center uppercase tracking-wider">Kampala, Uganda</p>
+        </div>
+    </div>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="flex-grow">
+        
+        <!-- --- HOME PAGE --- -->
+        <div id="home" class="page-section">
+            <!-- Hero -->
+            <div class="hero-bg text-white py-24 md:py-36 relative">
+                <div class="container mx-auto px-4 text-center relative z-10">
+                    <div class="inline-block bg-blue-800/50 backdrop-blur-sm px-4 py-1 rounded-full border border-blue-400/30 mb-6 animate-pulse">
+                        <span class="text-sm font-semibold text-blue-100">#1 IT Solutions Provider in East Africa</span>
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight drop-shadow-2xl leading-tight">
+                        Innovating for <br><span class="text-yellow-400">Africa's Future</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-blue-100 mb-10 max-w-2xl mx-auto font-light drop-shadow-md">
+                        We build robust digital infrastructure for Ugandan businesses. From Kampala to Gulu, we keep you connected.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-5">
+                        <button onclick="navigateTo('projects')" class="btn-hover-effect bg-yellow-400 text-blue-900 px-8 py-4 rounded-full font-bold text-lg shadow-xl border-2 border-yellow-400">
+                            View Our Work
+                        </button>
+                        <button onclick="navigateTo('contact')" class="btn-hover-effect bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:bg-white hover:text-blue-900">
+                            Get a Quote
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marquee -->
+            <div class="bg-blue-900 text-white py-3 border-b-4 border-yellow-400 shadow-2xl z-20 relative">
+                <marquee behavior="scroll" direction="left" scrollamount="8" class="text-lg font-mono font-semibold tracking-wide">
+                    🇺🇬 PROMO: Business Websites starting at UGX 800,000!  |  📞 Call Toll-Free: 0800-123-456  |  🚀 New Branch open in Entebbe!
+                </marquee>
+            </div>
+
+            <!-- Certifications Preview (Trusted By) -->
+            <div class="bg-white py-8 border-b">
+                <div class="container mx-auto px-4 text-center">
+                    <p class="text-sm text-gray-400 font-bold uppercase tracking-widest mb-4">Certified & Trusted By</p>
+                    <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                        <!-- Using Icons as logos for demo -->
+                        <div class="flex items-center gap-2 font-bold text-xl"><i data-lucide="shield-check" class="h-8 w-8 text-blue-600"></i> ISO 9001</div>
+                        <div class="flex items-center gap-2 font-bold text-xl"><i data-lucide="award" class="h-8 w-8 text-blue-600"></i> Microsoft</div>
+                        <div class="flex items-center gap-2 font-bold text-xl"><i data-lucide="wifi" class="h-8 w-8 text-blue-600"></i> CISCO</div>
+                        <div class="flex items-center gap-2 font-bold text-xl"><i data-lucide="check-circle" class="h-8 w-8 text-blue-600"></i> UCC Approved</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Services Snippet -->
+            <div class="container mx-auto px-4 py-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Why Businesses Choose Us</h2>
+                    <div class="h-1 w-20 bg-yellow-400 mx-auto rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="globe" class="text-blue-600 w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">Local Expertise</h3>
+                        <p class="text-gray-600">We understand the Ugandan market and build solutions that work in our local environment.</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="zap" class="text-blue-600 w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">Fast Implementation</h3>
+                        <p class="text-gray-600">We deploy systems 2x faster than competitors. Time is money, and we save you both.</p>
+                    </div>
+                    <div class="card-hover bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center">
+                        <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="headphones" class="text-blue-600 w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3">24/7 Local Support</h3>
+                        <p class="text-gray-600">Our Kampala-based support team is always a phone call away, anytime.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --- PROJECTS PAGE (New Section) --- -->
+        <div id="projects" class="page-section hidden">
+            <div class="bg-slate-900 text-white py-16 text-center">
+                <h1 class="text-4xl font-bold mb-4">Previous Projects</h1>
+                <p class="text-slate-300">A selection of our work across East Africa</p>
+            </div>
+            
+            <div class="container mx-auto px-4 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Project 1 -->
+                    <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Meeting">
+                            <div class="absolute inset-0 bg-blue-900/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <button class="text-white border border-white px-6 py-2 rounded-full hover:bg-white hover:text-blue-900 transition font-bold">View Case Study</button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-yellow-500 uppercase tracking-wide">FinTech</span>
+                            <h3 class="text-xl font-bold text-gray-800 mt-1 mb-2">Kampala Finance App</h3>
+                            <p class="text-gray-600 text-sm">Developed a secure mobile banking application for a leading microfinance institution in Kampala.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="E-Learning">
+                             <div class="absolute inset-0 bg-blue-900/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <button class="text-white border border-white px-6 py-2 rounded-full hover:bg-white hover:text-blue-900 transition font-bold">View Case Study</button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-yellow-500 uppercase tracking-wide">Education</span>
+                            <h3 class="text-xl font-bold text-gray-800 mt-1 mb-2">Makerere E-Portal</h3>
+                            <p class="text-gray-600 text-sm">A comprehensive student portal handling registrations for over 10,000 students.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1580048915913-4f8f5cb481c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt="Logistics">
+                             <div class="absolute inset-0 bg-blue-900/80 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                                <button class="text-white border border-white px-6 py-2 rounded-full hover:bg-white hover:text-blue-900 transition font-bold">View Case Study</button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-yellow-500 uppercase tracking-wide">Logistics</span>
+                            <h3 class="text-xl font-bold text-gray-800 mt-1 mb-2">Nairobi-Kampala Tracker</h3>
+                            <p class="text-gray-600 text-sm">Real-time GPS fleet management system for cross-border transport companies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --- SERVICES PAGE --- -->
+        <div id="services" class="page-section hidden">
+            <div class="bg-blue-900 text-white py-12 text-center">
+                <h1 class="text-4xl font-bold">Our Services</h1>
+                <p class="text-blue-200 mt-2">Pricing tailored for the East African Market</p>
+            </div>
+            <div class="container mx-auto px-4 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="card-hover bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-blue-600">
+                        <div class="p-8">
+                            <div class="h-14 w-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+                                <i data-lucide="layout" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Web Development</h3>
+                            <p class="text-gray-500 mb-6 h-12">Responsive business websites and e-commerce stores.</p>
+                            <div class="text-3xl font-bold text-blue-900 mb-1">UGX 1.5M</div>
+                            <span class="text-sm text-gray-400">Starting Price</span>
+                            <button class="w-full mt-6 py-3 border-2 border-blue-600 text-blue-600 font-bold rounded-lg hover:bg-blue-600 hover:text-white transition btn-hover-effect">Order Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="card-hover bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-yellow-400 relative">
+                        <div class="absolute top-0 right-0 bg-yellow-400 text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                        <div class="p-8">
+                            <div class="h-14 w-14 bg-yellow-100 rounded-lg flex items-center justify-center mb-6 text-yellow-600">
+                                <i data-lucide="server" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Network Setup</h3>
+                            <p class="text-gray-500 mb-6 h-12">Full office cabling, WiFi configuration, and security.</p>
+                            <div class="text-3xl font-bold text-blue-900 mb-1">UGX 850k</div>
+                            <span class="text-sm text-gray-400">Per Office Room</span>
+                            <button class="w-full mt-6 py-3 bg-blue-900 text-white font-bold rounded-lg hover:bg-blue-800 transition btn-hover-effect">Request Survey</button>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="card-hover bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-blue-600">
+                        <div class="p-8">
+                            <div class="h-14 w-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+                                <i data-lucide="wrench" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">IT Maintenance</h3>
+                            <p class="text-gray-500 mb-6 h-12">Monthly computer repair and software updates.</p>
+                            <div class="text-3xl font-bold text-blue-900 mb-1">UGX 300k</div>
+                            <span class="text-sm text-gray-400">Monthly Retainer</span>
+                            <button class="w-full mt-6 py-3 border-2 border-blue-600 text-blue-600 font-bold rounded-lg hover:bg-blue-600 hover:text-white transition btn-hover-effect">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --- ABOUT PAGE --- -->
+        <div id="about" class="page-section hidden">
+            <div class="container mx-auto px-4 py-16">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="md:w-1/2">
+                        <!-- Image: Black woman tech leader -->
+                        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="rounded-3xl shadow-2xl transform hover:rotate-1 transition duration-500" alt="CEO">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-bold text-blue-900 mb-6">Rooted in Excellence</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            EliteTech Solutions is 100% Ugandan-owned and operated. We understand the unique challenges of the African digital landscape—from connectivity issues to power management—and we build systems that survive and thrive here.
+                        </p>
+                        
+                        <!-- Certifications Section (New) -->
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-4 flex items-center"><i data-lucide="award" class="w-5 h-5 text-yellow-500 mr-2"></i> Our Certifications</h4>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="text-green-500 w-4 h-4 mr-2"></i> ISO 9001 Certified</li>
+                                <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="text-green-500 w-4 h-4 mr-2"></i> Microsoft Gold Partner</li>
+                                <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="text-green-500 w-4 h-4 mr-2"></i> CISCO Networking Pros</li>
+                                <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="text-green-500 w-4 h-4 mr-2"></i> UCC Licensed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- --- CONTACT PAGE --- -->
+        <div id="contact" class="page-section hidden">
+            <div class="container mx-auto px-4 py-16">
+                <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                    <div class="bg-blue-900 p-10 text-white md:w-2/5 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                        <h2 class="text-3xl font-bold mb-6 relative z-10">Visit Our Office</h2>
+                        <div class="space-y-6 relative z-10">
+                            <div class="flex items-start">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-yellow-400 mr-4 mt-1"></i>
+                                <span>Plot 45, Kampala Road<br>Kampala, Uganda</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="phone" class="w-6 h-6 text-yellow-400 mr-4"></i>
+                                <span>+256 779 949 750</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="mail" class="w-6 h-6 text-yellow-400 mr-4"></i>
+                                <span>info@elitetech.ug</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-10 md:w-3/5">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Send us a Message</h2>
+                        <form onsubmit="alert('Webale! We have received your message.'); return false;" class="space-y-4">
+                            <input type="text" placeholder="Full Name" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition">
+                            <input type="email" placeholder="Email Address" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition">
+                            <textarea rows="4" placeholder="Project Details..." class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"></textarea>
+                            <button class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition btn-hover-effect shadow-lg">Submit Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-slate-900 text-slate-400 py-8 mt-auto border-t border-slate-800">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="hover:text-white hover:scale-110 transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white hover:scale-110 transition"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white hover:scale-110 transition"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white hover:scale-110 transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+            </div>
+            <p class="mb-2">© 2025 MUSIITWA ELIJAH DIT/25W/U/A1128 EliteTech Solutions Uganda.</p>
+            <p class="text-xs text-slate-600">Designed with ❤️ in Kampala</p>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Toggle Menu
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar-menu');
+            const overlay = document.getElementById('menu-overlay');
+            
+            if (sidebar.classList.contains('sidebar-closed')) {
+                // Open
+                sidebar.classList.remove('sidebar-closed');
+                sidebar.classList.add('sidebar-open');
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.remove('opacity-0'), 10);
+            } else {
+                // Close
+                sidebar.classList.remove('sidebar-open');
+                sidebar.classList.add('sidebar-closed');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+            }
+        }
+
+        // Navigation Logic
+        function navigateTo(pageId) {
+            // Hide all pages
+            const pages = ['home', 'services', 'projects', 'about', 'contact'];
+            pages.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+
+            // Show target page
+            const target = document.getElementById(pageId);
+            target.classList.remove('hidden');
+            
+            // Reset animation
+            target.classList.remove('page-section');
+            void target.offsetWidth; // trigger reflow
+            target.classList.add('page-section');
+
+            // Close sidebar if open
+            const sidebar = document.getElementById('sidebar-menu');
+            if (!sidebar.classList.contains('sidebar-closed')) {
+                toggleMenu();
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initial Load
+        navigateTo('home');
+    </script>
+</body>
+</html>
