@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Us</title>
+        <!-- Tailwind CSS (Utility classes) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- ================= CSS STYLES ================= -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="bg-white shadow-lg sticky top-0 z-40 backdrop-blur-md bg-opacity-95">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-2 group">
+            <div class="bg-blue-900 p-2 rounded-lg group-hover:bg-blue-800 transition">
+                <i data-lucide="cpu" class="h-6 w-6 text-white"></i>
+            </div>
+            <span class="text-2xl font-extrabold text-blue-900 tracking-tight">EliteTech</span>
+        </a>
+
+        <button onclick="toggleMenu()" class="flex items-center gap-2 p-2 hover:bg-blue-50 rounded-full transition duration-300 focus:outline-none group border border-transparent hover:border-blue-100">
+            <span class="hidden sm:block font-semibold text-gray-600 group-hover:text-blue-900">Menu</span>
+            <i data-lucide="menu" class="h-8 w-8 text-blue-900 transform group-hover:rotate-180 transition duration-500"></i>
+        </button>
+    </div>
+</header>
+
+<div id="menu-overlay" onclick="toggleMenu()" class="fixed inset-0 bg-slate-900/60 z-40 transition-opacity opacity-0 backdrop-blur-sm"></div>
+
+<div id="sidebar-menu" class="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 sidebar-closed flex flex-col border-l border-gray-100">
+    <div class="p-5 flex justify-between items-center border-b bg-blue-50">
+        <span class="text-xl font-bold text-blue-900">Navigation</span>
+        <button onclick="toggleMenu()" class="p-2 hover:bg-red-100 hover:text-red-600 rounded-full transition">
+            <i data-lucide="x" class="h-6 w-6"></i>
+        </button>
+    </div>
+    <nav class="flex-grow p-6 flex flex-col space-y-3">
+        <a href="index.html" class="nav-link flex items-center space-x-4 p-4 rounded-xl hover:bg-blue-50 text-gray-700 hover:text-blue-900 transition text-lg font-medium hover:translate-x-2 duration-300">
+            <i data-lucide="home" class="w-5 h-5"></i> <span>Home</span>
+        </a>
+        <a href="services.html" class="nav-link flex items-center space-x-4 p-4 rounded-xl hover:bg-blue-50 text-gray-700 hover:text-blue-900 transition text-lg font-medium hover:translate-x-2 duration-300">
+            <i data-lucide="briefcase" class="w-5 h-5"></i> <span>Services</span>
+        </a>
+        <a href="projects.html" class="nav-link flex items-center space-x-4 p-4 rounded-xl hover:bg-blue-50 text-gray-700 hover:text-blue-900 transition text-lg font-medium hover:translate-x-2 duration-300">
+            <i data-lucide="folder-check" class="w-5 h-5"></i> <span>Our Projects</span>
+        </a>
+        <a href="about-us.html" class="nav-link flex items-center space-x-4 p-4 rounded-xl hover:bg-blue-50 text-gray-700 hover:text-blue-900 transition text-lg font-medium hover:translate-x-2 duration-300">
+            <i data-lucide="info" class="w-5 h-5"></i> <span>About Us</span>
+        </a>
+        <a href="contact-us.html" class="nav-link flex items-center space-x-4 p-4 rounded-xl bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-blue-500/30 transition text-lg font-medium mt-4 btn-hover-effect">
+            <i data-lucide="mail" class="w-5 h-5"></i> <span>Contact Us</span>
+        </a>
+    </nav>
+    <div class="p-6 bg-gray-50 border-t">
+        <p class="text-xs text-gray-500 text-center uppercase tracking-wider">Kampala, Uganda</p>
+    </div>
+</div>
+            <!-- --- ABOUT PAGE --- -->
+        <div class="page-section">
+            <div class="container mx-auto px-4 py-16">
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="md:w-1/2">
+                        <!-- Image: Black woman tech leader -->
+                        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="rounded-3xl shadow-2xl transform hover:rotate-1 transition duration-500" alt="CEO">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-bold text-blue-900 mb-6">Rooted in Excellence</h2>
+                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                            EliteTech Solutions is 100% Ugandan-owned and operated. We understand the unique challenges of the African digital landscape—from connectivity issues to power management—and we build systems that survive and thrive here.
+                        </p>
+                        
+                        <!-- Certifications Section (New) -->
+                        <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-4 flex items-center"><i data-lucide="award" class="w-5 h-5 text-yellow-500 mr-2"></i> Our Certifications</h4>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="text-green-500 w-4 h-4 mr-2"></i> ISO 9001 Certified</li>
+                                <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="text-green-500 w-4 h-4 mr-2"></i> Microsoft Gold Partner</li>
+                                <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="text-green-500 w-4 h-4 mr-2"></i> CISCO Networking Pros</li>
+                                <li class="flex items-center text-sm text-gray-600"><i data-lucide="check" class="text-green-500 w-4 h-4 mr-2"></i> UCC Licensed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ================= FOOTER ================= -->
+    <footer class="bg-slate-900 text-slate-400 py-8 mt-auto border-t border-slate-800">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="hover:text-white hover:scale-110 transition"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white hover:scale-110 transition"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white hover:scale-110 transition"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                <a href="#" class="hover:text-white hover:scale-110 transition"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+            </div>
+            <p class="mb-2">© 2025 MUSIITWA ELIJAH DIT/25W/U/A1128 EliteTech Solutions Uganda.</p>
+            <p class="text-xs text-slate-600">Designed with ❤️ in Kampala</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
